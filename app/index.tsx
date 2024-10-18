@@ -14,30 +14,30 @@ export default function Login()
 
     return (
     <>
-        <SafeAreaView>
-            <Text>Login</Text>
-            <Text>Email</Text>
-            <TextInput
-                style={styles.input}
-                onChangeText={SetEmail}
-                value={Email}
-                placeholder='Email'
-                keyboardType='email-address'
-            />
-            <Text>Senha</Text>
-            <TextInput
-                style={styles.input}
-                onChangeText={SetPassword}
-                value={Password}
-                placeholder='Password'
-                keyboardType='numeric'
-                secureTextEntry={true}
-            />
-            <TouchableOpacity onPress={() => {PressBtn()}}>
-                <Text>Enviar</Text>
-            </TouchableOpacity>
+        <SafeAreaView style={styles.Container}>
             <View>
-                <Link href={"/(tabs)"}>Vai</Link>
+                <Text style={[styles.Text, {textAlign: "center"}]}>Login</Text>
+                <Text style={styles.Text}>Email</Text>
+                <TextInput
+                    style={styles.Input}
+                    onChangeText={SetEmail}
+                    value={Email}
+                    placeholder='Email'
+                    keyboardType='email-address'
+                />
+                <Text style={styles.Text}>Senha</Text>
+                <TextInput
+                    style={styles.Input}
+                    onChangeText={SetPassword}
+                    value={Password}
+                    placeholder='Password'
+                    keyboardType='numeric'
+                    secureTextEntry={true}
+                />
+                <TouchableOpacity onPress={() => {PressBtn()}} style={styles.Btn}>
+                    <Text style={styles.Text}>Enviar</Text>
+                </TouchableOpacity>
+                <Link href={"/(tabs)/explore"} style={[styles.Btn, styles.Text]}>Registrar-se</Link>
             </View>
         </SafeAreaView>
     </>
@@ -45,10 +45,39 @@ export default function Login()
 }
 
 const styles = StyleSheet.create({
-    input:
+    Container:
+    {
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#d0d0d0",
+    },
+    LoginBox:
+    {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+    },
+    Input:
     {
         paddingHorizontal: 10,
         paddingVertical: 3,
-
-    }
+        borderWidth: 1,
+        fontFamily: "DefFont",
+        backgroundColor: "#f0f0f0",
+    },
+    Text:
+    {
+        marginVertical: 5,
+        fontFamily: "DefFont",
+    },
+    Btn:
+    {
+        marginVertical: 5,
+        alignSelf: "center",
+        borderWidth: 1,
+        backgroundColor: "#f0f0f0",
+    },
 });

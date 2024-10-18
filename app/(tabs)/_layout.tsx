@@ -7,7 +7,6 @@ export default function TabLayout()
 {
   return (
     <>
-      <Header image={require("@/assets/images/react-logo.png")}/>
       <Tabs>
         <Tabs.Screen name="index" options=
         {{
