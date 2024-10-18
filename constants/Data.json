@@ -2,21 +2,25 @@
     {
         "id": "1",
         "nome": "Faibo",
-        "idade": "15"
+        "idade": "15",
+        "image": "../assets/images/react-logo.png"
     },
     {
         "id": "2",
         "nome": "Esuardo",
-        "idade": "16"
+        "idade": "16",
+        "image": "../assets/images/react-logo.png"
     },
     {
         "id": "3",
         "nome": "Luigi",
-        "idade": "18"
+        "idade": "18",
+        "image": "../assets/images/react-logo.png"
     },
     {
         "id": "4",
         "nome": "Marinah",
-        "idade": "25"
+        "idade": "25",
+        "image": "../assets/images/react-logo.png"
     }
 ]
