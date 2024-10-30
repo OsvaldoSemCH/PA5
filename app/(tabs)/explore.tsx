@@ -1,6 +1,8 @@
-import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Alert, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
 import { Link, router } from 'expo-router'
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { Auth } from '@/services/firebase';
 
 export default function Login()
 {
@@ -12,7 +14,16 @@ export default function Login()
     {
         if(Password == Password2)
         {
-            router.push("../");
+            createUserWithEmailAndPassword(Auth, Email, Password)
+            .then((UserData) =>
+                {
+                    console.log(UserData);
+                    router.push("../");
+                }
+            ).catch((err) =>
+            {
+                Alert.alert(err.message);
+            });
         }
     }
 

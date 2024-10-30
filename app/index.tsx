@@ -1,6 +1,8 @@
 import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
 import { Link, router } from 'expo-router'
+import { Auth } from '@/services/firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 export default function Login()
 {
@@ -9,7 +11,13 @@ export default function Login()
 
     const PressBtn = () =>
     {
-        router.push("/(tabs)");
+        signInWithEmailAndPassword(Auth, Email, Password)
+        .then((UserData) => {
+            console.log(UserData);
+            router.push('/(tabs)')
+        }).catch((err) => {
+            alert(err.message);
+        });
     }
 
     return (
