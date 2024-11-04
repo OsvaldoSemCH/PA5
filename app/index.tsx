@@ -14,7 +14,7 @@ export default function Login()
         signInWithEmailAndPassword(Auth, Email, Password)
         .then((UserData) => {
             console.log(UserData);
-            router.push('/(tabs)')
+            router.push('/(loja)')
         }).catch((err) => {
             alert(err.message);
         });

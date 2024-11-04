@@ -14,25 +14,18 @@ export default function TabLayout()
           tabBarIcon: () => 
           (<>
             <Text>♻</Text>
-          </>)
+          </>),
+          tabBarLabel: () => (null)
         }}
         ></Tabs.Screen>
-        <Tabs.Screen name="explore" options=
+        <Tabs.Screen name="new" options=
         {{
           headerShown: false,
           tabBarIcon: () => 
           (<>
             <Text>☣</Text>
-          </>)
-        }}
-        ></Tabs.Screen>
-        <Tabs.Screen name="list" options=
-        {{
-          headerShown: false,
-          tabBarIcon: () => 
-          (<>
-            <Text>🎛</Text>
-          </>)
+          </>),
+          tabBarLabel: () => (null)
         }}
         ></Tabs.Screen>
       </Tabs>

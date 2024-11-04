@@ -1,20 +1,25 @@
 import { Text, View, Image, ImageSourcePropType, StyleSheet } from "react-native"
 
-interface CardData
+interface Product
 {
-    name: string;
-    price: number;
-    image: ImageSourcePropType;
+    Title : string,
+    Album : string,
+    Author : string,
+    Price : number
 }
 
-export const Card = ({name, price, image} : CardData) =>
+export const Card = ({Title,Album,Author,Price} : Product) =>
 {
     return(
     <>
         <View style={Styles.background}>
-            <Text>{name}</Text>
-            <Text style={Styles.price}>R$ {price.toFixed(2)}</Text>
-            <Image source={image}></Image>
+            <Image source={require("@/assets/images/mp3.png")} style={{width: 100, height: 120}}></Image>
+            <View style={{flexDirection: "column", flexWrap: "wrap"}}>
+                <Text style={Styles.Title}>{Title}</Text>
+                <Text>Álbum: {Album == "" ? "Desconhecido" : Album}</Text>
+                <Text>Autor: {Author == "" ? "Desconhecido" : Author}</Text>
+                <Text style={Styles.price}>R$ {Price.toFixed(2)}</Text>
+            </View>
         </View>
     </>
     )
@@ -26,17 +31,20 @@ const Styles = StyleSheet.create
     {
         backgroundColor: "#d0d0d0",
         display: "flex",
+        flexDirection: "row",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         paddingHorizontal: 10,
         paddingVertical: 5,
-        width: 80,
-        height: 120,
-        borderColor: "#606060",
-        borderStyle: "solid",
-        borderWidth: 1
+        width: 300,
+        height: 200,
     },
     price:
+    {
+        fontWeight: "bold",
+        fontSize: 24
+    },
+    Title:
     {
         fontWeight: "bold",
         fontSize: 24
